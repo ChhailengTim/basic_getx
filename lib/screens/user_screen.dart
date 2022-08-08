@@ -13,19 +13,21 @@ class UserScreen extends StatelessWidget {
         child: Column(
           children: [
             TextField(
-              onChanged: (value) {
-                storeController.storeName.value;
+              onChanged: (v) {
+                storeController.storeName(v);
               },
               decoration: const InputDecoration(
                 label: Text('Enter User name'),
                 hintText: 'Your name',
               ),
             ),
-            Text('User Name: ${storeController.storeName}'),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Center(
-                child: Text('Update name'),
+            Text('User Name: ${storeController.storeName.value}'),
+            Obx(
+              () => ElevatedButton(
+                onPressed: () {},
+                child: const Center(
+                  child: Text('Update name'),
+                ),
               ),
             ),
           ],
