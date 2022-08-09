@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class StoreController extends GetxController {
-  final storeName = "".obs;
+  final storeName = "User name".obs;
   final followerCount = 0.obs;
   final storeStatuse = true.obs;
   final followerList = [].obs;
