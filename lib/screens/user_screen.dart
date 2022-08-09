@@ -10,27 +10,28 @@ class UserScreen extends StatelessWidget {
     final storeController = Get.put(StoreController());
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            TextField(
-              onChanged: (v) {
-                storeController.storeName(v);
-              },
-              decoration: const InputDecoration(
-                label: Text('Enter User name'),
-                hintText: 'Your name',
+        child: Obx(
+          () => Column(
+            children: [
+              TextField(
+                controller: storeController.reviewNameEditingController,
+                onChanged: (v) {
+                  storeController.storeName(v);
+                },
+                decoration: const InputDecoration(
+                  label: Text('Enter User name'),
+                  hintText: 'Your name',
+                ),
               ),
-            ),
-            Text('User Name: ${storeController.storeName.value}'),
-            Obx(
-              () => ElevatedButton(
+              Text('User Name: ${storeController.storeName.value}'),
+              ElevatedButton(
                 onPressed: () {},
                 child: const Center(
                   child: Text('Update name'),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
