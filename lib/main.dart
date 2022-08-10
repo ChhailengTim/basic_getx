@@ -1,4 +1,4 @@
-import 'package:basic_getx/screens/welcome_screen.dart';
+import 'package:basic_getx/7_pch_api/screen/pch_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: WelcomeScreen(),
+      home: PCHScreen(),
     );
   }
 }
