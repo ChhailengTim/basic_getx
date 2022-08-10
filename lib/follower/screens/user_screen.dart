@@ -1,4 +1,4 @@
-import 'package:basic_getx/controller/store_controller.dart';
+import 'package:basic_getx/follower/controller/store_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

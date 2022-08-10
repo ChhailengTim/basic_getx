@@ -1,6 +1,7 @@
-import 'package:basic_getx/controller/store_controller.dart';
-import 'package:basic_getx/models/button.dart';
-import 'package:basic_getx/screens/user_screen.dart';
+import 'package:basic_getx/follower/controller/store_controller.dart';
+import 'package:basic_getx/follower/models/button.dart';
+import 'package:basic_getx/follower/screens/user_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
