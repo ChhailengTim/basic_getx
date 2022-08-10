@@ -12,16 +12,16 @@ class ChangeThemeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          Obx(() => IconButton(
-                onPressed: () {
-                  themeController.change.value = !themeController.change.value;
-                  Get.changeTheme(
-                      Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
-                },
-                icon: themeController.change.value
-                    ? const Icon(Icons.dark_mode)
-                    : const Icon(Icons.light_mode),
-              )),
+          IconButton(
+            onPressed: () {
+              themeController.change.value = !themeController.change.value;
+              Get.changeTheme(
+                  Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
+            },
+            icon: themeController.change.value
+                ? const Icon(Icons.dark_mode)
+                : const Icon(Icons.light_mode),
+          ),
         ],
       ),
       body: Center(
