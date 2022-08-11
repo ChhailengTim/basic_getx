@@ -6,6 +6,11 @@ class ProductController extends GetxController {
   final apiBaseHelper = ApiBaseHelper();
   final product = Products().obs;
   final listProducts = <Products>[].obs;
+  RxString name = 'chhaileng'.obs;
+
+  void editName(String myName) {
+    name.value = myName;
+  }
 
   Future getListProducts() async {
     apiBaseHelper
