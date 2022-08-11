@@ -1,6 +1,3 @@
-import 'package:flutter/cupertino.dart';
-import 'package:get/get.dart';
-
 import '../../utils/constain.dart';
 
 class Pagination {
