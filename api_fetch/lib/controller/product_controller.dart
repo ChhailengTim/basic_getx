@@ -1,4 +1,5 @@
 import 'package:api_fetch/repository/product_repository.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import '../model/product_model.dart';
@@ -23,7 +24,7 @@ class ProductController extends GetxController {
     try {
       if (pagination.currentPage == 0) _data.clear();
       if (pagination.currentPage < pagination.lastPage) {
-        print(_isLoading.value);
+        debugPrint(_isLoading.value.toString());
         if (_isLoading.value) return Future.value();
         _isLoading.value = true;
         final response = await productRepo.getProduct(pagination);
@@ -37,7 +38,7 @@ class ProductController extends GetxController {
         }
       }
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
     }
     _isLoading.value = false;
   }

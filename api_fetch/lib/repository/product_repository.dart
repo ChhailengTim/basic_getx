@@ -1,5 +1,6 @@
 import 'package:api_fetch/constant.dart';
 import 'package:api_fetch/model/product_model.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 
@@ -18,7 +19,7 @@ class ProductRepository extends GetxController {
         };
       }
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
     }
     return null;
   }
