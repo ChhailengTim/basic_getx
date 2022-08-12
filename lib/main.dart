@@ -1,4 +1,4 @@
-import 'package:basic_getx/12_note_api/view/note_screen.dart';
+import 'package:basic_getx/13_api_default/view/default_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: NoteScreen(),
+      home: DefaultScree(),
     );
   }
 }

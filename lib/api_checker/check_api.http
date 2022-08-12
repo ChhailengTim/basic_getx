@@ -1,1 +1,2 @@
-POST https://pchbiz-admin.idevgroup.club/api/user_buyer_app/get_newest_product
+//POST https://pchbiz-admin.idevgroup.club/api/user_buyer_app/get_newest_product
+GET https://gunter-food-api.herokuapp.com/pizza
