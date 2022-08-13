@@ -1,4 +1,4 @@
-import 'package:api_fetch/good/view/good_screend.dart';
+import 'package:api_fetch/brand/view/brand_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GoodScreen(),
+      home: BrandScreen(),
     );
   }
 }
