@@ -1,7 +1,6 @@
+import 'package:api_fetch/good/view/good_screend.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'view/defualt_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DefaultScreen(),
+      home: GoodScreen(),
     );
   }
 }
