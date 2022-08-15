@@ -1,4 +1,3 @@
-import 'package:api_fetch/good/contants.dart';
 import 'package:dio/dio.dart';
 
 var dio = Dio(
@@ -13,5 +12,6 @@ mixin URLs {
 }
 
 class ImageUrl {
-  static const String ImageUrlBase = 'https://pchbiz-admin.idevgroup.club/image/upload/products/';
+  static const String imageUrlBase =
+      'https://pchbiz-admin.idevgroup.club/image/upload/products/';
 }

@@ -374,7 +374,7 @@ class ProductVariant {
         qty: json['qty'],
         alertQty: json['alert_qty'],
         priceStatus: json['price_status'],
-        imageThumbnail: ImageUrl.ImageUrlBase + json['image_thumbnail'],
+        imageThumbnail: ImageUrl.imageUrlBase + json['image_thumbnail'],
         shortDesc: json['short_desc'],
         fullDesc: json['full_desc'],
         sellStatus: json['sell_status'],
