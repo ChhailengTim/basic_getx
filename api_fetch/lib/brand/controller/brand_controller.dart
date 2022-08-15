@@ -8,19 +8,23 @@ class BrandController extends GetxController {
       'https://pchbiz-admin.idevgroup.club/api/user_buyer_app/get_newest_product'
           .obs;
   final brandList = <BrandModel>[].obs;
+  final brand = BrandModel().obs;
 
-  //List<BrandModel> get data => brandList.toList();
+  List<BrandModel> get data => brandList;
 
   Future<Map<String, dynamic>?> getBrandData() async {
     try {
       var response = await dio.post(baseURL.value);
       if (response.statusCode == 200) {
         brandList.clear();
-        
+        response.data['data']['data'].map((e) {
+          brand.value = BrandModel.fromJson(e);
+          brandList.add(brand.value);
+        }).toList();
       }
     } catch (e) {
       debugPrint(e.toString());
     }
-    return getBrandData();
+    return null;
   }
 }
