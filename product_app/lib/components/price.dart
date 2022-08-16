@@ -23,9 +23,12 @@ class Price extends StatelessWidget {
             style: const TextStyle(color: Colors.black),
           ),
           const TextSpan(
-            text: "/kg",
-            style:
-                TextStyle(color: Colors.black26, fontWeight: FontWeight.normal),
+            text: "/items",
+            style: TextStyle(
+              color: Colors.black26,
+              fontWeight: FontWeight.normal,
+              fontSize: 13,
+            ),
           )
         ],
       ),

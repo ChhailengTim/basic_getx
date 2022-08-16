@@ -35,7 +35,7 @@ class ProductCard extends StatelessWidget {
               child: Center(
                 child: Image.network(
                   product.imageThumbnail!,
-                  height: 100,
+                  height: 120,
                 ),
               ),
             ),
