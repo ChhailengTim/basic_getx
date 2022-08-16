@@ -1,7 +1,7 @@
 import 'package:api_fetch/outcome/outcome_constand.dart';
 import 'package:api_fetch/product/constant.dart';
 
-class Pagination {
+class PaginationModel {
   final int? total;
   int perPage;
   int currentPage;
@@ -9,7 +9,7 @@ class Pagination {
   final int? from;
   final int? to;
 
-  Pagination({
+  PaginationModel({
     this.total,
     this.perPage = 10,
     this.currentPage = 0,
@@ -18,7 +18,8 @@ class Pagination {
     this.to,
   });
 
-  factory Pagination.fromJson(Map<String, dynamic> json) => Pagination(
+  factory PaginationModel.fromJson(Map<String, dynamic> json) =>
+      PaginationModel(
         total: json['total'],
         perPage: json['per_page'],
         currentPage: json['current_page'],
@@ -28,10 +29,10 @@ class Pagination {
       );
 }
 
-List<Product> getProductModel(List<dynamic> data) =>
-    List<Product>.from(data.map((e) => Product.fromJson(e)));
+List<Outcome> getOutcomeModel(List<dynamic> data) =>
+    List<Outcome>.from(data.map((e) => Outcome.fromJson(e)));
 
-class Product {
+class Outcome {
   final int? id;
   final int? storeId;
   final String? storeName;
@@ -70,7 +71,7 @@ class Product {
   final List<ProductOption>? productOption;
   final List<ProductVariant>? productVariant;
 
-  Product({
+  Outcome({
     this.id,
     this.storeId,
     this.storeName,
@@ -110,7 +111,7 @@ class Product {
     this.productVariant,
   });
 
-  factory Product.fromJson(Map<String, dynamic> json) => Product(
+  factory Outcome.fromJson(Map<String, dynamic> json) => Outcome(
         id: json['id'],
         storeId: json['store_id'],
         storeName: json['store_name'],
