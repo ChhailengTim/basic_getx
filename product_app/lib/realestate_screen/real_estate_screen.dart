@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:product_app/realestate_screen/view/booking_screen.dart';
 import 'package:product_app/realestate_screen/view/commission_screen.dart';
+import 'package:product_app/realestate_screen/view/detail_screen.dart';
+import 'package:product_app/realestate_screen/view/list_screen.dart';
 import 'package:product_app/realestate_screen/view/sale_screen.dart';
 
 class RealEstateScreen extends StatelessWidget {
@@ -33,6 +36,42 @@ class RealEstateScreen extends StatelessWidget {
                 },
                 child: const TextCard(
                   title: 'Sale List Screen',
+                  price: '>',
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Get.to(const DetailScreen());
+                },
+                child: const TextCard(
+                  title: 'Project Detail Screen',
+                  price: '>',
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Get.to(const ListScreen());
+                },
+                child: const TextCard(
+                  title: 'List Screen',
+                  price: '>',
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Get.to(const BookingScreen());
+                },
+                child: const TextCard(
+                  title: 'Booking Screen',
                   price: '>',
                 ),
               ),
