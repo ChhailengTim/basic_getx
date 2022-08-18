@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:product_app/realestate_screen/controller/sale_controller.dart';
 
 class SaleScreen extends StatelessWidget {
   const SaleScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final SaleController saleController = Get.put(SaleController());
     return Scaffold(
       backgroundColor: const Color(0xFFF6F5F2),
       appBar: AppBar(
@@ -55,19 +58,49 @@ class SaleScreen extends StatelessWidget {
           Expanded(
             child: ListView.separated(
                 itemBuilder: (context, index) {
-                  return propertyCard();
+                  return propertyCard(
+                    statusColor: index.isEven
+                        ? '${saleController.saleList[index].status}'
+                        : '${saleController.saleList[index].status}',
+                    title: '${saleController.saleList[index].title}',
+                    price: '${saleController.saleList[index].price}',
+                    data: '${saleController.saleList[index].data}',
+                    location: '${saleController.saleList[index].location}',
+                    highway: ', ${saleController.saleList[index].highway}',
+                    status: '${saleController.saleList[index].status}',
+                  );
                 },
                 separatorBuilder: ((context, index) {
                   return const SizedBox();
                 }),
-                itemCount: 30),
+                itemCount: saleController.saleList.length),
           ),
         ],
       ),
     );
   }
 
-  Widget propertyCard() {
+  Color? setColor(String statusColor) {
+    switch (statusColor.toLowerCase()) {
+      case 'pending':
+        return Colors.blue;
+      case 'reject':
+        return Colors.red;
+      case 'approved':
+        return Colors.green;
+    }
+    return Colors.black;
+  }
+
+  Widget propertyCard({
+    final String? statusColor,
+    final String? title,
+    final String? price,
+    final String? data,
+    final String? location,
+    final String? highway,
+    final String? status,
+  }) {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: Container(
@@ -100,44 +133,44 @@ class SaleScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
-                    children: const [
+                    children: [
                       Text(
-                        'A01',
-                        style: TextStyle(
+                        title ?? 'null',
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Text(
-                        '\$50.000',
-                        style: TextStyle(
+                        price ?? 'null',
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
                   ),
                   Row(
-                    children: const [
-                      Text('22 DEC, 23:40'),
-                      Spacer(),
+                    children: [
+                      Text(data ?? 'null'),
+                      const Spacer(),
                       Text(
-                        'Pending',
+                        status ?? 'null',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Colors.blue,
+                          color: setColor(statusColor!),
                         ),
                       ),
                     ],
                   ),
                   Row(
-                    children: const [
+                    children: [
                       Text(
-                        'Phnom Penh, ',
-                        style: TextStyle(
+                        location ?? 'null ',
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text('3 National road, Highway'),
+                      Text(highway ?? 'null'),
                     ],
                   ),
                 ],
