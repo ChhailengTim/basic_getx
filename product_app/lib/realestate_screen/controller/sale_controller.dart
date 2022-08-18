@@ -1,0 +1,95 @@
+import 'package:get/get.dart';
+import 'package:product_app/realestate_screen/model/sale_model.dart';
+
+class SaleController extends GetxController {
+  final saleList = <SaleModel>[
+    SaleModel(
+      title: 'A01',
+      price: '\$50.000',
+      data: '22 DEC, 23:40',
+      location: 'Phnom Penh',
+      highway: '3 National road, Highway',
+      status: 'Approved',
+    ),
+    SaleModel(
+      title: 'A01',
+      price: '\$50.000',
+      data: '22 DEC, 23:40',
+      location: 'Phnom Penh',
+      highway: '3 National road, Highway',
+      status: 'Pending',
+    ),
+    SaleModel(
+      title: 'A01',
+      price: '\$50.000',
+      data: '22 DEC, 23:40',
+      location: 'Phnom Penh',
+      highway: '3 National road, Highway',
+      status: 'Pending',
+    ),
+    SaleModel(
+      title: 'A01',
+      price: '\$50.000',
+      data: '22 DEC, 23:40',
+      location: 'Phnom Penh',
+      highway: '3 National road, Highway',
+      status: 'Reject',
+    ),
+    SaleModel(
+      title: 'A01',
+      price: '\$50.000',
+      data: '22 DEC, 23:40',
+      location: 'Phnom Penh',
+      highway: '3 National road, Highway',
+      status: 'Pending',
+    ),
+    SaleModel(
+      title: 'A01',
+      price: '\$50.000',
+      data: '22 DEC, 23:40',
+      location: 'Phnom Penh',
+      highway: '3 National road, Highway',
+      status: 'Reject',
+    ),
+    SaleModel(
+      title: 'A01',
+      price: '\$50.000',
+      data: '22 DEC, 23:40',
+      location: 'Phnom Penh',
+      highway: '3 National road, Highway',
+      status: 'Approved',
+    ),
+    SaleModel(
+      title: 'A01',
+      price: '\$50.000',
+      data: '22 DEC, 23:40',
+      location: 'Phnom Penh',
+      highway: '3 National road, Highway',
+      status: 'Pending',
+    ),
+    SaleModel(
+      title: 'A01',
+      price: '\$50.000',
+      data: '22 DEC, 23:40',
+      location: 'Phnom Penh',
+      highway: '3 National road, Highway',
+      status: 'Approved',
+    ),
+    SaleModel(
+      title: 'A01',
+      price: '\$50.000',
+      data: '22 DEC, 23:40',
+      location: 'Phnom Penh',
+      highway: '3 National road, Highway',
+      status: 'Pending',
+    ),
+    SaleModel(
+      title: 'A01',
+      price: '\$50.000',
+      data: '22 DEC, 23:40',
+      location: 'Phnom Penh',
+      highway: '3 National road, Highway',
+      status: 'Reject',
+    ),
+  ];
+}
