@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:product_app/realestate_screen/components/custom_button.dart';
-import 'package:product_app/realestate_screen/components/text_card.dart';
 
 class CommissionScreen extends StatelessWidget {
   const CommissionScreen({super.key});
@@ -50,6 +48,122 @@ class CommissionScreen extends StatelessWidget {
                 text: 'All Sale',
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TextCard extends StatelessWidget {
+  const TextCard({
+    Key? key,
+    this.title,
+    this.price,
+  }) : super(key: key);
+  final String? title;
+  final String? price;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.only(
+          top: 40,
+          bottom: 40,
+          left: 20,
+          right: 20,
+        ),
+        child: Row(
+          children: [
+            Text(
+              title ?? 'non-title',
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    color: Colors.black,
+                    fontSize: 20,
+                  ),
+            ),
+            const Spacer(),
+            Text(
+              price ?? 'non-price',
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  final BorderRadius? borderRadius;
+  final String? text;
+  final Widget? child;
+  final bool isfill;
+  final bool isEnable;
+  final Color? fillColor;
+  final Color? borderColor;
+  final TextStyle? textStyle;
+  final GestureTapCallback? onTap;
+  const CustomButton({
+    Key? key,
+    this.onTap,
+    this.borderRadius,
+    this.text,
+    this.child,
+    this.isfill = true,
+    this.textStyle,
+    this.fillColor,
+    this.borderColor,
+    this.isEnable = true,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: borderRadius ?? BorderRadius.circular(10),
+      child: Material(
+        child: InkWell(
+          onTap: isEnable ? onTap ?? () {} : null,
+          highlightColor: isfill
+              ? Colors.white.withOpacity(0.2)
+              : Colors.grey.withOpacity(0.2),
+          splashColor: isfill
+              ? Colors.white.withOpacity(0.2)
+              : Colors.grey.withOpacity(0.2),
+          child: Ink(
+            height: 50,
+            decoration: BoxDecoration(
+              color: isEnable
+                  ? (isfill
+                      ? fillColor ?? Colors.yellow[700]
+                      : Colors.transparent)
+                  : Colors.black12,
+              borderRadius: borderRadius ?? BorderRadius.circular(10),
+              border: isfill
+                  ? const Border.symmetric()
+                  : Border.all(color: borderColor ?? Colors.yellow),
+            ),
+            child: Container(
+              alignment: Alignment.center,
+              child: child ??
+                  Text(
+                    text ?? 'Text',
+                    style: textStyle ??
+                        TextStyle(
+                          color: isfill ? Colors.white : Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+            ),
           ),
         ),
       ),

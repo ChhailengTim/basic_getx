@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:product_app/realestate_screen/components/text_card.dart';
 import 'package:product_app/realestate_screen/view/commission_screen.dart';
 import 'package:product_app/realestate_screen/view/sale_screen.dart';
 
