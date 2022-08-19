@@ -4,6 +4,7 @@ import 'package:product_app/realestate_screen/view/booking_screen.dart';
 import 'package:product_app/realestate_screen/view/commission_screen.dart';
 import 'package:product_app/realestate_screen/view/detail_screen.dart';
 import 'package:product_app/realestate_screen/view/list_screen.dart';
+import 'package:product_app/realestate_screen/view/list_sell.dart';
 import 'package:product_app/realestate_screen/view/sale_screen.dart';
 
 class RealEstateScreen extends StatelessWidget {
@@ -72,6 +73,18 @@ class RealEstateScreen extends StatelessWidget {
                 },
                 child: const TextCard(
                   title: 'Booking Screen',
+                  price: '>',
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Get.to(() => const ListSell());
+                },
+                child: const TextCard(
+                  title: 'List Sell Screen',
                   price: '>',
                 ),
               ),
