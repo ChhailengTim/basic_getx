@@ -79,7 +79,7 @@ class BookingController extends GetxController {
       title: 'A13',
       sqr: '278 m2',
       price: '19,200,22 \$',
-      status: 'Booked',
+      status: 'Sold',
     ),
     BookingModel(
       title: 'A14',
