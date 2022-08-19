@@ -10,9 +10,9 @@ class BookingScreen extends StatelessWidget {
     final BookingController bookingController = Get.put(BookingController());
     return Scaffold(
       backgroundColor: const Color(0xFFF6F5F2),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: SafeArea(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
           child: Column(
             children: [
               const CustomAppBar(),
