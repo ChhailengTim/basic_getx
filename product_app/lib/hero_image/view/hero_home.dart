@@ -26,16 +26,19 @@ class HeroHome extends StatelessWidget {
               child: SizedBox(
                 height: 200,
                 child: Card(
-                  child: ListTile(
-                    title: Text(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      image: DecorationImage(
+                        image: AssetImage(
+                            '${heroController.listHero[index].image}'),
+                      ),
+                    ),
+                    child: Text(
                       '${heroController.listHero[index].title}',
                       style: const TextStyle(
                         fontSize: 20,
                       ),
-                    ),
-                    leading: Image.asset(
-                      '${heroController.listHero[index].image}',
-                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
