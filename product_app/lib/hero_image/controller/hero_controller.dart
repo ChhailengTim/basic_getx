@@ -23,5 +23,9 @@ class HeroControllers extends GetxController {
       title: 'Cat5',
       image: 'assets/images/cat5.jpg',
     ),
+    HeroModel(
+      title: 'Cat6',
+      image: 'assets/images/cat6.jpg',
+    ),
   ];
 }
