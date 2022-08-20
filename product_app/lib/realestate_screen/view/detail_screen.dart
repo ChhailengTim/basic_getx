@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:product_app/realestate_screen/view/commission_screen.dart';
 
 class DetailScreen extends StatelessWidget {
   const DetailScreen({Key? key}) : super(key: key);
@@ -103,6 +104,12 @@ class DetailScreen extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const CustomButton(
+                text: "ទិញ",
               ),
             ],
           ),

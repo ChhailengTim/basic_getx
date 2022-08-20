@@ -82,6 +82,9 @@ class SellCard extends StatelessWidget {
                         Text('Rona'),
                       ],
                     ),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
@@ -90,6 +93,9 @@ class SellCard extends StatelessWidget {
                         Text('អាចដក'),
                         Text('120\$'),
                       ],
+                    ),
+                    const SizedBox(
+                      height: 10,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
