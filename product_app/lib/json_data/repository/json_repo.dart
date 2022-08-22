@@ -1,15 +1,17 @@
-import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:product_app/json_data/json_utile/json_contain.dart';
 
 class JsonRepository extends GetxController {
-  Future jsonData() async {
-    final response =
-        await rootBundle.loadString('lib/json_data/json/countries.json');
-    var data = await json.decode(response);
-    debugPrint(data.toString());
-    return data['data'];
+  Future getCountry() async {
+    try {
+      final response = await url.get('/countries.json');
+      if (response.statusCode == 200) {
+        var data = response.data;
+        return data;
+      }
+    } catch (e) {
+      debugPrint(e.toString());
+    }
   }
 }
