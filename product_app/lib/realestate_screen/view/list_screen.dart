@@ -88,7 +88,7 @@ class ListScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 image: const DecorationImage(
                   image: NetworkImage(
-                      'https://scontent.fpnh4-1.fna.fbcdn.net/v/t39.30808-6/298917391_611818530622305_4899983607959906092_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_ohc=skgsQrQpIigAX80hGH_&_nc_ht=scontent.fpnh4-1.fna&oh=00_AT8V4DK_fP8N5fUnDznEm9c68vEgmdjTXbFa9Gfw9XDNBA&oe=6302D7A1'),
+                      'https://scontent.fpnh4-1.fna.fbcdn.net/v/t39.30808-6/298917391_611818530622305_4899983607959906092_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_ohc=jGwRS0FG1nwAX-bkXks&_nc_ht=scontent.fpnh4-1.fna&oh=00_AT8HBsZOPMt-IJEwdPFwAUCC3XTaVgY6vkRo1F9-NXRhXw&oe=6308C661'),
                   fit: BoxFit.cover,
                 ),
               ),
