@@ -1,8 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:product_app/counties/model/countrie_model_data.dart';
+import 'package:product_app/counties/view/widgets/list_card.dart';
 
 class HelloCountrie extends StatefulWidget {
   const HelloCountrie({super.key});
@@ -12,35 +11,48 @@ class HelloCountrie extends StatefulWidget {
 }
 
 class _HelloCountrieState extends State<HelloCountrie> {
-  List cn = <CountrieModelData>[];
-  Future<void> readJson() async {
-    final String response =
-        await rootBundle.loadString('lib/counties/json/countrie_data.json');
-    final data = await json.decode(response);
-    setState(() {
-      cn = data['CountrieModelData'];
+  List cn = [];
+  readJson() async {
+    await DefaultAssetBundle.of(context)
+        .loadString('lib/counties/json/countrie_data.json')
+        .then((e) {
+      setState(() {
+        cn = json.decode(e);
+        debugPrint(cn.toString());
+      });
     });
+  }
+
+  @override
+  void initState() {
+    readJson();
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      // body: Obx(() => ListView.builder(
-      //     itemCount: countrieControllerData.listCountrieData.length,
-      //     itemBuilder: (context, index) {
-      //       return ListTile(
-      //         title: Text(
-      //             '${countrieControllerData.listCountrieData[index].name}'),
-      //       );
-      //     })),
-      body: ElevatedButton(
-        onPressed: () {
-          setState(() {
-            debugPrint(cn.toString());
-          });
-        },
-        child: const Text('data'),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: SafeArea(
+          child: ListView.separated(
+            itemBuilder: (context, index) {
+              return ListCard(
+                country: cn[index]['name'],
+                capital: cn[index]['capital'],
+                region: cn[index]['region'],
+                currency: cn[index]['currency'],
+              );
+            },
+            separatorBuilder: (context, index) {
+              return const SizedBox(
+                height: 10,
+              );
+            },
+            itemCount: cn.length,
+          ),
+        ),
       ),
     );
   }
