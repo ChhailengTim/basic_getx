@@ -6,4 +6,5 @@ class AuthController extends GetxController {
   final password = TextEditingController();
   bool validateUsername = false;
   bool validatePassword = false;
+  final title = ''.obs;
 }

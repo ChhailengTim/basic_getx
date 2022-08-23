@@ -19,14 +19,17 @@ class AuthScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  'Validation Check',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 30,
-                      ),
-                ),
+                Obx(() => Text(
+                      authController.title.value,
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                    )),
                 TextFormField(
+                  onChanged: (v) {
+                    authController.username;
+                  },
                   controller: authController.username,
                   obscureText: false,
                   decoration: const InputDecoration(
@@ -58,6 +61,7 @@ class AuthScreen extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () {
                     if (formKey.currentState!.validate()) {}
+                    authController.title.value = authController.username.text;
                   },
                   child: const Text('Submit'),
                 ),
