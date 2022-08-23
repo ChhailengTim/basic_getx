@@ -13,7 +13,12 @@ class SuperAppScreen extends StatelessWidget {
       body: Obx(() => ListView.builder(
           itemCount: superAppController.listSuperapp.length,
           itemBuilder: (context, index) {
-            return Text('${superAppController.listSuperapp[index].id}');
+            return Column(
+              children: [
+                Text('${superAppController.listSuperapp[index].id}'),
+                Text('${superAppController.listSuperapp[index].storeName}'),
+              ],
+            );
           })),
     );
   }
