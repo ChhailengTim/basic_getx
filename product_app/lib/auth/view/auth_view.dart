@@ -11,10 +11,13 @@ class AuthScreen extends StatelessWidget {
     final AuthController authController = Get.put(AuthController());
     return Scaffold(
       body: SafeArea(
-        child: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
           child: Form(
             key: formKey,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'Validation Check',
