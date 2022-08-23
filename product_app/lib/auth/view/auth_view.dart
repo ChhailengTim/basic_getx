@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:product_app/auth/controller/auth_controller.dart';
+import 'package:product_app/auth/view/second_page.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({Key? key}) : super(key: key);
@@ -64,6 +65,12 @@ class AuthScreen extends StatelessWidget {
                     authController.title.value = authController.username.text;
                   },
                   child: const Text('Submit'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Get.to(() => const SecondPage());
+                  },
+                  child: const Text('Next page'),
                 ),
               ],
             ),
