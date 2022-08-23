@@ -1,7 +1,14 @@
+//import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({Key? key}) : super(key: key);
+
+  // Future get() async {
+  //   var dio = Dio();
+  //   final response = await dio.get('https://google.com');
+  //   print(response.data);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +35,13 @@ class SecondPage extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                             fontSize: 30,
                           ),
+                    ),
+                    const SizedBox(
+                      height: 50,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('Join now'),
                     ),
                   ],
                 ),
