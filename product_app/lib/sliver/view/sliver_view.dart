@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'sliver_scroll.dart';
+import 'third_view.dart';
 
 class SliverScreen extends StatelessWidget {
   const SliverScreen({Key? key}) : super(key: key);
@@ -19,6 +20,12 @@ class SliverScreen extends StatelessWidget {
                   Get.to(() => const SliverScroll());
                 },
                 icon: const Icon(Icons.navigate_next),
+              ),
+              IconButton(
+                onPressed: () {
+                  Get.to(() => const ThirdScreen());
+                },
+                icon: const Icon(Icons.arrow_back),
               ),
             ],
             pinned: true,
