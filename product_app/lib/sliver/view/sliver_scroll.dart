@@ -8,87 +8,138 @@ class SliverScroll extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              physics: const BouncingScrollPhysics(),
-              child: Row(
-                children: const [
-                  Box(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Box(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Box(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Box(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Box(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Box(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Box(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Box(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Box(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Box(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Box(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Box(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Box(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Box(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Box(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Box(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                ],
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            children: [
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                physics: const BouncingScrollPhysics(),
+                child: Row(
+                  children: const [
+                    Box(),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Box(),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Box(),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Box(),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Box(),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Box(),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Box(),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Box(),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Box(),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Box(),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Box(),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Box(),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Box(),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Box(),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Box(),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Box(),
+                    SizedBox(
+                      width: 10,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Get.back();
-              },
-              child: const Text('Back'),
-            ),
-          ],
+              ElevatedButton(
+                onPressed: () {
+                  Get.back();
+                },
+                child: const Text('Back'),
+              ),
+              Container(
+                width: double.infinity,
+                height: 200,
+                color: Colors.pink,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Container(
+                width: double.infinity,
+                height: 200,
+                color: Colors.pink,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Container(
+                width: double.infinity,
+                height: 200,
+                color: Colors.pink,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Container(
+                width: double.infinity,
+                height: 200,
+                color: Colors.pink,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Container(
+                width: double.infinity,
+                height: 200,
+                color: Colors.pink,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Container(
+                width: double.infinity,
+                height: 200,
+                color: Colors.pink,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+            ],
+          ),
         ),
       ),
     );
