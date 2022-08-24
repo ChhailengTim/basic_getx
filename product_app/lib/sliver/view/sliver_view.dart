@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:product_app/sliver/view/four_view.dart';
 
 import 'sliver_scroll.dart';
 import 'third_view.dart';
@@ -14,6 +15,12 @@ class SliverScreen extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         slivers: [
           SliverAppBar(
+            leading: IconButton(
+              onPressed: () {
+                Get.to(() => const FourView());
+              },
+              icon: const Icon(Icons.face),
+            ),
             actions: [
               IconButton(
                 onPressed: () {
