@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'second_view.dart';
+
 class SliverScroll extends StatelessWidget {
   const SliverScroll({Key? key}) : super(key: key);
 
@@ -138,6 +140,36 @@ class SliverScroll extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
+              ActionChip(
+                  avatar: CircleAvatar(
+                    backgroundColor: Colors.grey.shade800,
+                    child: const Text('AB'),
+                  ),
+                  label: const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text('Aaron Burr'),
+                  ),
+                  onPressed: () {
+                    showAboutDialog(
+                      context: context,
+                      applicationName: 'Hello Flutter',
+                      children: [
+                        const Text("data"),
+                      ],
+                    );
+                  }),
+              ActionChip(
+                  avatar: CircleAvatar(
+                    backgroundColor: Colors.grey.shade800,
+                    child: const Text('AB'),
+                  ),
+                  label: const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text('Aaron Burr'),
+                  ),
+                  onPressed: () {
+                    Get.to(() => const SecondView());
+                  })
             ],
           ),
         ),
