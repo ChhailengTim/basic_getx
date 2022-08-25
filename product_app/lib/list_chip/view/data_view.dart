@@ -17,7 +17,7 @@ class DataScreen extends StatelessWidget {
         children: [
           ElevatedButton(
             onPressed: () {
-              postController.getPost();
+              //postController.getPost();
             },
             child: const Text('Getdata'),
           ),
