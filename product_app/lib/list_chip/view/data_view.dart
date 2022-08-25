@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:product_app/list_chip/controller/controller.dart';
 
 class DataScreen extends StatelessWidget {
   const DataScreen({Key? key, this.num}) : super(key: key);
@@ -8,7 +6,7 @@ class DataScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final postController = Get.put(PostController());
+    //final postController = Get.put(PostController());
     return Scaffold(
       appBar: AppBar(
         title: Text('$num'),
