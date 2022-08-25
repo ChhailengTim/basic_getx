@@ -33,6 +33,7 @@ dependencies:
     flutter:
         sdk: flutter
     get: ^4.6.5
+    http: ^0.13.5
     youtube_player_flutter: ^8.1.0
 
 dev_dependencies:

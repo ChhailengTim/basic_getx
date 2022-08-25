@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'data_view.dart';
 
 class ChipScreen extends StatelessWidget {
   const ChipScreen({super.key});
@@ -47,19 +50,13 @@ class ChipScreen extends StatelessWidget {
                 .asMap()
                 .entries
                 .map(
-                  (e) => Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.amber,
-                      ),
-                      child: Center(
-                        child: Text(e.value),
-                      ),
-                    ),
+                  (e) => ContainerWidget(
+                    onTap: () {
+                      Get.to(() => DataScreen(
+                            num: e.key,
+                          ));
+                    },
+                    index: e.value,
                   ),
                 )
                 .toList(),
@@ -82,6 +79,37 @@ class ChipScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class ContainerWidget extends StatelessWidget {
+  const ContainerWidget({
+    Key? key,
+    required this.index,
+    this.onTap,
+  }) : super(key: key);
+  final String? index;
+  final GestureTapCallback? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          height: 100,
+          width: 100,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.amber,
+          ),
+          child: Center(
+            child: Text('$index'),
+          ),
+        ),
       ),
     );
   }
