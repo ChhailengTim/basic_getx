@@ -22,6 +22,7 @@ class ChipScreen extends StatelessWidget {
       'Find',
       'Discover',
       'Profile',
+      'Search',
     ];
     return Scaffold(
       appBar: AppBar(),
