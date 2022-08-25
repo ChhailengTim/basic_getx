@@ -8,12 +8,14 @@ class DefualtSwiper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final SwiperControllers swiperController = Get.put(SwiperControllers());
+    final  swiperController = Get.put(SwiperControllers());
     return Scaffold(
         appBar: AppBar(
           title: const Text('Defualt Swiper'),
         ),
         body: Swiper(
+          viewportFraction: 10,
+          scale: 0.9,
           itemCount: swiperController.listSwiper.length,
           itemBuilder: (context, index) {
             return Image.asset(
