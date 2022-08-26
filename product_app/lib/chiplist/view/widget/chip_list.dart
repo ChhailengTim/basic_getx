@@ -34,7 +34,9 @@ class ChipList extends StatelessWidget {
                       color: Colors.black,
                     ),
                   ),
-                  onPressed: onPressed,
+                  onPressed: () {
+                    e.value;
+                  },
                 ),
               ),
             )
