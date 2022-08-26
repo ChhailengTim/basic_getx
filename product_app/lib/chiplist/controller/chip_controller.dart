@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:product_app/chiplist/model/chip_model.dart';
 
-
 class OrderController extends GetxController {
   final listOrder = <OrderModel>[
     OrderModel(
