@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:product_app/chiplist/controller/chip_controller.dart';
-import 'package:product_app/chiplist/view/method/filter_list.dart';
 import 'package:product_app/chiplist/view/widget/chip_card.dart';
 
 class OrderListScreen extends StatefulWidget {
