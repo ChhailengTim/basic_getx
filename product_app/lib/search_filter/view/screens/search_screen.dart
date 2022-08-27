@@ -14,6 +14,15 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   final controller = TextEditingController();
   List<Book> books = allBook;
+  int selectedIndex = 0;
+  bool selected = false;
+  final List<String> chipList = [
+    'meow',
+    'cat',
+    'fat',
+    'ter ter',
+    'ly ly',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +31,35 @@ class _SearchScreenState extends State<SearchScreen> {
       ),
       body: Column(
         children: [
+          Row(
+            children: [
+              ActionChip(
+                  backgroundColor: selected ? Colors.orange : Colors.black12,
+                  label: const Text(
+                    'All',
+                  ),
+                  onPressed: () {
+                    selected = !selected;
+                    searchBook('');
+                  }),
+              Row(
+                children: chipList
+                    .asMap()
+                    .entries
+                    .map(
+                      (e) => buildChip(
+                          text: e.value,
+                          onTap: () {
+                            searchBook(e.value);
+                            selectedIndex = e.key;
+                            setState(() {});
+                          },
+                          selected: selectedIndex == e.key),
+                    )
+                    .toList(),
+              ),
+            ],
+          ),
           Container(
             margin: const EdgeInsets.fromLTRB(16, 16, 16, 16),
             child: TextFormField(
@@ -47,7 +85,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     child: GestureDetector(
                       onTap: () {
                         Get.to(() => SearchDetail(
-                              i: index,
+                              book: book,
                             ));
                       },
                       child: CatCard(book: book),
@@ -68,4 +106,18 @@ class _SearchScreenState extends State<SearchScreen> {
     }).toList();
     setState(() => books = suggestions);
   }
+}
+
+Widget buildChip(
+    {required String? text, VoidCallback? onTap, bool selected = false}) {
+  return Padding(
+    padding: const EdgeInsets.only(right: 10),
+    child: GestureDetector(
+      onTap: onTap,
+      child: Chip(
+        label: Text(text!),
+        backgroundColor: selected ? Colors.orange : Colors.black12,
+      ),
+    ),
+  );
 }

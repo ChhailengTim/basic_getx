@@ -5,13 +5,12 @@ import 'package:product_app/search_filter/model/search_model.dart';
 
 // ignore: must_be_immutable
 class SearchDetail extends StatelessWidget {
-  SearchDetail({
+  const SearchDetail({
     Key? key,
-    this.i,
+    required this.book,
   }) : super(key: key);
-
-  final int? i;
-  List<Book> book = allBook;
+  final Book book;
+  // List<Book> book = allBook;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +20,7 @@ class SearchDetail extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Hero(
-                tag: '${book[i!].title}',
+                tag: '${book.title}',
                 child: Container(
                   width: 300,
                   height: 300,
@@ -29,14 +28,14 @@ class SearchDetail extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
                       image: AssetImage(
-                        '${book[i!].imageURL}',
+                        '${book.imageURL}',
                       ),
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
               ),
-              Text('${book[i!].title}'),
+              Text('${book.title}'),
             ],
           ),
         ),
