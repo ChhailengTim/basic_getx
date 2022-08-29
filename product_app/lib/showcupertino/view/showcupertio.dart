@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:product_app/sale_detail/view/sale_detail.dart';
 import 'package:product_app/showcupertino/view/method/drop_list.dart';
 import 'package:product_app/showcupertino/view/method/drop_type.dart';
 import 'package:product_app/showcupertino/view/widget/use_button.dart';
@@ -52,7 +53,10 @@ class ShowcupertinoScreen extends StatelessWidget {
                               SizedBox(
                                 height: Get.height * .15,
                               ),
-                              const UseButton(
+                              UseButton(
+                                onTap: () {
+                                  Get.to(() => const SaleDetailScreen());
+                                },
                                 text: 'ច្រោះ',
                               ),
                             ],

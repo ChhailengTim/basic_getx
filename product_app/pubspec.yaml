@@ -54,6 +54,7 @@ flutter:
   assets:
     - assets/
     - assets/images/
+    - assets/project12/
     - lib/json_data/json/countries.json
     - lib/counties/json/countrie_data.json
   #   - images/a_dot_ham.jpeg
