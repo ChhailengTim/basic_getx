@@ -12,24 +12,16 @@ class SliverScreens extends StatelessWidget {
             expandedHeight: 200.0,
             pinned: false,
             floating: false,
-            flexibleSpace: Container(
-              child: Image.asset('assets/cat.jpg'),
-            ),
+            flexibleSpace: Image.asset('assets/cat.jpg'),
           ),
           SliverToBoxAdapter(
-            child: Container(
-              child: Image.asset('assets/cat.jpg'),
-            ),
+            child: Image.asset('assets/cat.jpg'),
           ),
           SliverToBoxAdapter(
-            child: Container(
-              child: Image.asset('assets/cat.jpg'),
-            ),
+            child: Image.asset('assets/cat.jpg'),
           ),
           SliverToBoxAdapter(
-            child: Container(
-              child: Image.asset('assets/cat.jpg'),
-            ),
+            child: Image.asset('assets/cat.jpg'),
           ),
         ],
       ),

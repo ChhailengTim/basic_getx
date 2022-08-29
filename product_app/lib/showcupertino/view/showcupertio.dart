@@ -30,7 +30,7 @@ class ShowcupertinoScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Container(
-                      height: MediaQuery.of(context).size.height * 0.5,
+                      height: Get.height * 0.5,
                       decoration: const BoxDecoration(
                         color: Colors.white,
                       ),
@@ -46,9 +46,21 @@ class ShowcupertinoScreen extends StatelessWidget {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text('ទីតាំង'),
+                              const Text(
+                                'ទីតាំង',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                ),
+                              ),
                               dropList(),
-                              const Text('ប្រភេទឡូតិ៍'),
+                              const Text(
+                                'ប្រភេទឡូតិ៍',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                ),
+                              ),
                               dropType(),
                               SizedBox(
                                 height: Get.height * .15,
