@@ -2,25 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:product_app/search_controller/controller/search_cotroller.dart';
 
-class ControllerScreen extends StatefulWidget {
-  const ControllerScreen({super.key});
+class ControllerScreen extends StatelessWidget {
+  const ControllerScreen({
+    Key? key,
+  }) : super(key: key);
 
-  @override
-  State<ControllerScreen> createState() => _ControllerScreenState();
-}
-
-final List<String> listChip = [
-  'meow',
-  'cat',
-  'fat',
-  'ter ter',
-  'ly ly',
-];
-
-class _ControllerScreenState extends State<ControllerScreen> {
-  final searchController = Get.put(SearchController());
   @override
   Widget build(BuildContext context) {
+    final searchController = Get.put(SearchController());
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Controller Search'),
@@ -33,17 +23,17 @@ class _ControllerScreenState extends State<ControllerScreen> {
                 ActionChip(
                     label: const Text('All'),
                     onPressed: () {
-                      searchBook('');
+                      searchController.searchBook('');
                     }),
                 Row(
-                  children: listChip
+                  children: searchController.listChip
                       .asMap()
                       .entries
                       .map(
                         (e) => ActionChip(
                           label: Text(e.value),
                           onPressed: () {
-                            searchBook(e.value);
+                            searchController.searchBook(e.value);
                           },
                         ),
                       )
@@ -63,7 +53,7 @@ class _ControllerScreenState extends State<ControllerScreen> {
                     borderSide: const BorderSide(color: Colors.black),
                   ),
                 ),
-                onChanged: searchBook,
+                onChanged: searchController.searchBook,
               ),
             ),
             Expanded(
@@ -92,14 +82,5 @@ class _ControllerScreenState extends State<ControllerScreen> {
         ),
       ),
     );
-  }
-
-  void searchBook(String query) {
-    final suggestions = searchController.allCatModel.where((cat) {
-      final catTitle = cat.title!.toLowerCase();
-      final input = query.toLowerCase();
-      return catTitle.contains(input);
-    }).toList();
-    setState(() => searchController.allCatModel = suggestions);
   }
 }
