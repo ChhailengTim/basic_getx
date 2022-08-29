@@ -30,4 +30,19 @@ class SearchController extends GetxController {
       imageURL: 'assets/images/cat6.jpg',
     ),
   ];
+  final List<String> listChip = [
+    'meow',
+    'cat',
+    'fat',
+    'ter ter',
+    'ly ly',
+  ];
+  void searchBook(String query) {
+    final suggestions = allCatModel.where((cat) {
+      final catTitle = cat.title!.toLowerCase();
+      final input = query.toLowerCase();
+      return catTitle.contains(input);
+    }).toList();
+    allCatModel = suggestions;
+  }
 }
