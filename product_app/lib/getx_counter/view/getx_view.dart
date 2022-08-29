@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:product_app/getx_counter/controller/get_controller.dart';
+import 'package:product_app/getx_counter/view/show_box.dart';
 
 class GetxView extends StatelessWidget {
   GetxView({Key? key}) : super(key: key);
@@ -21,6 +22,12 @@ class GetxView extends StatelessWidget {
                 controller.up();
               },
               child: const Text('up+++'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Get.to(() => const ShowboxScreen());
+              },
+              child: const Text('NextPage'),
             ),
           ],
         ),
