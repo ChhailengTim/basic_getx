@@ -37,6 +37,9 @@ class SaleDetailScreen extends StatelessWidget {
                       fontSize: 18,
                     ),
                   ),
+                  SizedBox(
+                    width: 30,
+                  ),
                   Text(
                     ':A01\n:22 Dec 2022 . 23:40\n:ផ្លូវជាតិលេខ​៨ 8, ភូមិជ្រៃ\n:Approved\n\$50.000\n:សុក​ បូរ៉ា\n:រស្មី\n:ប្រុស\n:0000123456789\n:0000123456789\n:0123456789\n:0234567890',
                     style: TextStyle(
