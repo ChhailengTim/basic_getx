@@ -37,7 +37,7 @@ class SearchController extends GetxController {
     'Ter ter',
     'Ly ly',
   ];
-  
+
   void searchCat(String query) {
     final suggestions = allCatModel.where((cat) {
       final catTitle = cat.title!.toLowerCase();
