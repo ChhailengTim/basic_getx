@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:product_app/cool_drop_down/view/cool_view.dart';
 import 'package:product_app/search_controller/controller/search_cotroller.dart';
 
 class ControllerScreen extends StatelessWidget {
@@ -23,7 +24,7 @@ class ControllerScreen extends StatelessWidget {
                 ActionChip(
                     label: const Text('All'),
                     onPressed: () {
-                      searchController.searchBook('');
+                      searchBook('');
                     }),
                 Row(
                   children: searchController.listChip
@@ -33,7 +34,7 @@ class ControllerScreen extends StatelessWidget {
                         (e) => ActionChip(
                           label: Text(e.value),
                           onPressed: () {
-                            searchController.searchBook(e.value);
+                            searchBook(e.value);
                           },
                         ),
                       )
@@ -53,7 +54,7 @@ class ControllerScreen extends StatelessWidget {
                     borderSide: const BorderSide(color: Colors.black),
                   ),
                 ),
-                onChanged: searchController.searchBook,
+                onChanged: searchBook,
               ),
             ),
             Expanded(
@@ -78,9 +79,25 @@ class ControllerScreen extends StatelessWidget {
                 itemCount: searchController.allCatModel.length,
               ),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Get.to(() => const CoolViewScreen());
+              },
+              child: const Text('CoolDropDown'),
+            ),
           ],
         ),
       ),
     );
+  }
+
+  void searchBook(String query) {
+    final searchController = Get.put(SearchController());
+    final suggestions = searchController.allCatModel.where((cat) {
+      final catTitle = cat.title!.toLowerCase();
+      final input = query.toLowerCase();
+      return catTitle.contains(input);
+    }).toList();
+    searchController.allCatModel = suggestions;
   }
 }

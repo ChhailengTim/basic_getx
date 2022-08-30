@@ -37,12 +37,5 @@ class SearchController extends GetxController {
     'ter ter',
     'ly ly',
   ];
-  void searchBook(String query) {
-    final suggestions = allCatModel.where((cat) {
-      final catTitle = cat.title!.toLowerCase();
-      final input = query.toLowerCase();
-      return catTitle.contains(input);
-    }).toList();
-    allCatModel = suggestions;
-  }
+  
 }
