@@ -38,6 +38,28 @@ class _DataScreenState extends State<DataScreen> {
                       onPressed: () {},
                       child: const Text('យល់ព្រម'),
                     ),
+                    ElevatedButton(
+                      onPressed: () {
+                        mymodalSheet(
+                          child: Column(
+                            children: [
+                              const Text(
+                                'ជ្រើសរើសថ្ងៃ',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 30,
+                                ),
+                              ),
+                              SfDateRangePicker(
+                                selectionMode:
+                                    DateRangePickerSelectionMode.range,
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                      child: const Text('New Popup'),
+                    ),
                   ],
                 ),
               );
