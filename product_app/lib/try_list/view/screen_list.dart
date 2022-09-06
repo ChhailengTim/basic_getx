@@ -46,7 +46,7 @@ class ScreenList extends StatelessWidget {
                   for (var item in list) Text(item['address'].toString()),
                 ],
               ),
-            )
+            ),
             // SingleChildScrollView(
             //   scrollDirection: Axis.horizontal,
             //   child: Wrap(
@@ -84,27 +84,27 @@ class ScreenList extends StatelessWidget {
             //         .toList(),
             //   ),
             // ),
-            // Column(
-            //   children: type
-            //       .asMap()
-            //       .entries
-            //       .map(
-            //         (e) => Column(
-            //           children: [
-            //             const CircleAvatar(
-            //               backgroundColor: Colors.black12,
-            //               radius: 40,
-            //               child: Icon(
-            //                 Icons.face,
-            //                 color: Colors.black,
-            //               ),
-            //             ),
-            //             Text(e.value),
-            //           ],
-            //         ),
-            //       )
-            //       .toList(),
-            // ),
+            Column(
+              children: type
+                  .asMap()
+                  .entries
+                  .map(
+                    (e) => Column(
+                      children: [
+                        const CircleAvatar(
+                          backgroundColor: Colors.black12,
+                          radius: 40,
+                          child: Icon(
+                            Icons.face,
+                            color: Colors.black,
+                          ),
+                        ),
+                        Text(e.value),
+                      ],
+                    ),
+                  )
+                  .toList(),
+            ),
           ],
         ),
       ),
