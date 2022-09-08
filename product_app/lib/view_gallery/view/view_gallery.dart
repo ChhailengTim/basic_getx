@@ -31,17 +31,14 @@ class ViewGalleryScreen extends StatelessWidget {
                                 indext: e.key,
                               ));
                         },
-                        child: Hero(
-                          tag: 'test',
-                          child: Container(
-                            height: 100,
-                            width: 100,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              image: DecorationImage(
-                                image: AssetImage(e.value),
-                                fit: BoxFit.cover,
-                              ),
+                        child: Container(
+                          height: 100,
+                          width: 100,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            image: DecorationImage(
+                              image: AssetImage(e.value),
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),
@@ -66,23 +63,20 @@ class ViewGalleryScreen extends StatelessWidget {
                                 indext: e.key,
                               ));
                         },
-                        child: Hero(
-                          tag: 'test',
-                          child: Column(
-                            children: [
-                              Container(
-                                height: 100,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5),
-                                  image: DecorationImage(
-                                    image: NetworkImage(e.value),
-                                    fit: BoxFit.cover,
-                                  ),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 100,
+                              width: 100,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                image: DecorationImage(
+                                  image: NetworkImage(e.value),
+                                  fit: BoxFit.cover,
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
