@@ -48,4 +48,6 @@ class JamesView extends StatelessWidget {
       ),
     );
   }
+  
+  getTemporaryDirectory() {}
 }
