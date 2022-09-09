@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:product_app/webview_app/view/webview.dart';
+
+import 'view/webview_html.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(
           name: '/',
-          page: () => const WebviewScreen(),
+          page: () => const WebViewHTML(),
         ),
       ],
     );
