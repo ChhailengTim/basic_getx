@@ -75,6 +75,7 @@ class RowColumnScreen extends StatelessWidget {
           ),
         ],
       ),
+      floatingActionButton: ,
     );
   }
 }
