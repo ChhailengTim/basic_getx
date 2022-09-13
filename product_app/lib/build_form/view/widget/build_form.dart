@@ -11,6 +11,7 @@ Form buildForm({
   void Function(String)? onTextChanged,
   TextInputType? keyboardType,
   Widget? suffixIcon,
+  Colors?filled,
   double paddingLeft = 8,
   double paddingRight = 8,
 }) =>
