@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:product_app/build_form/view/widget/build_form.dart';
 import 'package:product_app/filter/view/method/dropdown_button.dart';
+import 'package:product_app/filter/view/new_src.dart';
 import 'package:product_app/realestate_screen/view/commission_screen.dart';
 
 class FilterListScreen extends StatefulWidget {
@@ -21,10 +23,9 @@ class _FilterListScreenState extends State<FilterListScreen> {
       appBar: AppBar(
         title: const Text('Dropdown'),
       ),
-      body: ListView(
-        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-        physics: const BouncingScrollPhysics(),
+      body: Column(
         children: [
+          //const AccumulatorWidget(),
           Padding(
             padding: const EdgeInsets.only(
               top: 8.0,
@@ -259,11 +260,14 @@ class _FilterListScreenState extends State<FilterListScreen> {
         child: Padding(
           padding: const EdgeInsets.all(8),
           child: Column(
-            children: const [
+            children: [
               // SizedBox(
               //   height: AppSize.s8,
               // ),
               CustomButton(
+                onTap: () {
+                  Get.to(() => const NewScreen());
+                },
                 text: 'Apply Filter',
               ),
             ],
