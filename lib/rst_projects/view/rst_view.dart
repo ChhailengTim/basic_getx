@@ -1,3 +1,4 @@
+import 'package:basic_getx/rst_projects/test.dart';
 import 'package:basic_getx/rst_projects/view_model/repository/rst_repo.dart';
 import 'package:basic_getx/rst_projects/view_model/rst_view_model.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ class RealestateViewScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final rstRepo = Get.put(RstRepo());
     final rstController = Get.put(RstController());
+    final getApi = Get.put(GetApi());
     return Scaffold(
       appBar: AppBar(
         title: const Text('RealestateViewScreen'),
@@ -20,7 +22,8 @@ class RealestateViewScreen extends StatelessWidget {
             Text('${rstController.listRstData[i].projectName}'),
           ElevatedButton(
             onPressed: () {
-              rstRepo.getRstData();
+              getApi.getData();
+              //rstRepo.getRstData();
             },
             child: const Text('GetData'),
           ),
