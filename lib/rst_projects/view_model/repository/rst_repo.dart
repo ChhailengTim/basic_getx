@@ -4,11 +4,7 @@ import 'package:basic_getx/rst_projects/model/rst_model.dart';
 import 'package:http/http.dart' as http;
 
 class RstRepo {
-  var headers = {
-    'Authorization':
-        'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC90ZXN0LXN1cGVyYXBwLWFwaS5pZGV2Lmdyb3VwXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYzNzMzMDAzLCJleHAiOjEyOTg5MDg0OTE4MywibmJmIjoxNjYzNzMzMDAzLCJqdGkiOiJINkR0OUc4ZVNDQjhYeXlLIiwic3ViIjoxLCJwcnYiOiIyMzNkY2Y5ZGI4ZTEyYzljZmJmZDBmYTRkM2M3MmFkOTkwNDUxYjRjIn0.dgUnrjpzRJkKSQYn6OIKRAHk2cy18uIxm-cGo_bmeoM',
-    'Content-Type': 'application/json'
-  };
+
   var request = http.Request(
       'POST',
       Uri.parse(
@@ -16,7 +12,7 @@ class RstRepo {
   Future<List<dynamic>?> getRstData() async {
     try {
       request.body = convert.json.encode({"table_size": 10, "page": 1});
-      request.headers.addAll(headers);
+      //request.headers.addAll(headers);
       final response = await request.send();
       if (response.statusCode == 200) {
         final responseData =
