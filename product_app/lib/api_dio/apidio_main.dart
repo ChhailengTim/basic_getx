@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(
           name: '/',
-          page: () => const ApiwithDioScreen(),
+          page: () =>  ApiwithDioScreen(),
         ),
       ],
     );

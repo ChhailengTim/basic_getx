@@ -37,7 +37,6 @@ class ProjectDioModel extends GetxController {
       });
       if (response != null) {
         projectDataPerPage = response['pagination'];
-        print(projectDataPerPage);
         _projectData.addAll(response['data']);
         hasNext = _projectData.length < projectDataPerPage.total!;
       } else {

@@ -4,8 +4,14 @@ class ListData extends StatelessWidget {
   const ListData({
     Key? key,
     this.image,
+    this.proName,
+    this.phones,
+    this.provinceName,
   }) : super(key: key);
   final String? image;
+  final String? proName;
+  final String? phones;
+  final String? provinceName;
 
   @override
   Widget build(BuildContext context) {
@@ -34,25 +40,25 @@ class ListData extends StatelessWidget {
                   ),
                 ),
               ),
-              const Text(
-                'data',
-                style: TextStyle(
+              Text(
+                proName ?? 'data',
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 25,
+                  fontSize: 16,
                 ),
               ),
-              const Text(
-                'data',
-                style: TextStyle(
+              Text(
+                phones ?? 'data',
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 25,
+                  fontSize: 16,
                 ),
               ),
-              const Text(
-                'data',
-                style: TextStyle(
+              Text(
+                provinceName ?? 'data',
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 25,
+                  fontSize: 16,
                 ),
               ),
             ],

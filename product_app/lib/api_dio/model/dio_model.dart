@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 PaginationModel paginationModelFromJson(Map<String, dynamic> str) =>
     PaginationModel.fromJson(str);
 
@@ -64,12 +66,16 @@ class ProjectModel {
 
   ProjectModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    projectName = json['project_name'];
+    projectName = json['project_name'] == null
+        ? '-'
+        : jsonDecode(json['project_name'])['latin_name'];
     imageThumbnail = json['image_thumbnail'];
     youtubeLink = json['youtube_link'];
     phones = json['phones'];
     provinceId = json['province_id'];
-    provinceName = json['province_name'];
+    provinceName = json['province_name'] == null
+        ? '-'
+        : jsonDecode(json['province_name'])['latin_name'];
     projectTypeId = json['project_type_id'];
     projectTypeName = json['project_type_name'];
     latitude = json['latitude'];
