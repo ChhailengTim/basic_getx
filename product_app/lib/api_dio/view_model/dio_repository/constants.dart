@@ -1,12 +1,12 @@
 import 'package:dio/dio.dart';
+import 'package:get/get.dart';
+import 'package:product_app/api_dio/view_model/dio_repository/string_tk.dart';
 
+final notesData = Get.put(Protections());
 Dio dio = Dio(
   BaseOptions(
     baseUrl: URLs.host,
-    headers: {
-      'Authorization':
-          'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC90ZXN0LXN1cGVyYXBwLWFwaS5pZGV2Lmdyb3VwXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYzNzMzMDAzLCJleHAiOjEyOTg5MDg0OTE4MywibmJmIjoxNjYzNzMzMDAzLCJqdGkiOiJINkR0OUc4ZVNDQjhYeXlLIiwic3ViIjoxLCJwcnYiOiIyMzNkY2Y5ZGI4ZTEyYzljZmJmZDBmYTRkM2M3MmFkOTkwNDUxYjRjIn0.dgUnrjpzRJkKSQYn6OIKRAHk2cy18uIxm-cGo_bmeoM'
-    },
+    headers: {'Authorization': 'Bearer ${Protections.data}'},
   ),
 );
 

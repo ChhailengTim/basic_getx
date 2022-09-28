@@ -17,6 +17,11 @@ class ApiwithDioScreen extends StatelessWidget {
       }
     }
   }
+  //#TODO
+  // Future _refresh({String? search}) async {
+  //   projectDioModel.projectDataPerPage = PaginationModel(perPage: 10);
+  //   await projectDioModel.getData(search: search);
+  // }
 
   @override
   Widget build(BuildContext context) {
