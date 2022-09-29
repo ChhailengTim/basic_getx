@@ -33,6 +33,10 @@ class ApiwithDioScreen extends StatelessWidget {
     scrollController.addListener(scrollListener);
     return Scaffold(
       appBar: AppBar(
+        leading: BackButton(onPressed: () {
+          search = null;
+          _refresh();
+        }),
         actions: [
           IconButton(
             onPressed: () {

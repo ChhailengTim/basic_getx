@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:product_app/api_dio/model/dio_model.dart';
 import 'package:product_app/api_dio/view/widgets/image_cache.dart';
+import 'package:product_app/api_dio/view/widgets/projects/project_detail.dart';
 import 'package:product_app/api_dio/view/widgets/shimmer_loading.dart';
 
 class WidgetsUse {
@@ -36,7 +37,9 @@ class WidgetsUse {
         itemCount: listProject.length,
         itemBuilder: (context, index) {
           return projectCard(
-            onTap: () {},
+            onTap: () {
+              Get.to(() => const ProjectDetail());
+            },
             projectModel: listProject[index],
           );
         },
