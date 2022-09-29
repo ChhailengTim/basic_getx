@@ -30,7 +30,6 @@ class ApiwithDioScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     scrollController.addListener(scrollListener);
-    final projectDioModel = Get.put(ProjectDioModel());
     return Scaffold(
       appBar: AppBar(
         title: TextField(
