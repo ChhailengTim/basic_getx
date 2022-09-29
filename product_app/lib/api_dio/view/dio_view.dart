@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:product_app/api_dio/view/widgets/list_data.dart';
+import 'package:product_app/api_dio/model/dio_model.dart';
+import 'package:product_app/api_dio/view/widgets/refresh_widget.dart';
+import 'package:product_app/api_dio/view/widgets/widget.dart';
 import 'package:product_app/api_dio/view_model/dio_view_model.dart';
 
 class ApiwithDioScreen extends StatelessWidget {
   ApiwithDioScreen({super.key});
   final projectDioModel = Get.put(ProjectDioModel());
+  static String? search;
+  final TextEditingController textinput = TextEditingController();
 
   final scrollController = ScrollController();
   void scrollListener() async {
@@ -17,11 +21,11 @@ class ApiwithDioScreen extends StatelessWidget {
       }
     }
   }
-  //#TODO
-  // Future _refresh({String? search}) async {
-  //   projectDioModel.projectDataPerPage = PaginationModel(perPage: 10);
-  //   await projectDioModel.getData(search: search);
-  // }
+
+  Future _refresh() async {
+    projectDioModel.projectDataPerPage = PaginationModel(perPage: 10);
+    await projectDioModel.getData(search: search);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,35 +33,35 @@ class ApiwithDioScreen extends StatelessWidget {
     final projectDioModel = Get.put(ProjectDioModel());
     return Scaffold(
       appBar: AppBar(
-        title: const Text('API Dio()'),
+        title: TextField(
+          controller: textinput,
+          decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+            hintText: 'Search',
+          ),
+          onChanged: (v) {
+            search = v == '' ? null : v;
+            _refresh();
+          },
+        ),
       ),
-      body: Column(
-        children: [
-          Obx(() => Expanded(
-                child: projectDioModel.projectData.isEmpty
-                    ? const SizedBox()
-                    : ListView.separated(
-                        physics: const AlwaysScrollableScrollPhysics(),
-                        controller: scrollController,
-                        itemBuilder: (context, index) {
-                          return ListData(
-                            image:
-                                'https://test-pms-chhaythai-api.idev.group/images/project/${projectDioModel.projectData[index].imageThumbnail}',
-                            proName:
-                                '${projectDioModel.projectData[index].projectName}',
-                            phones:
-                                '${projectDioModel.projectData[index].phones}',
-                            provinceName:
-                                '${projectDioModel.projectData[index].provinceName}',
-                          );
-                        },
-                        separatorBuilder: (context, index) {
-                          return const SizedBox();
-                        },
-                        itemCount: projectDioModel.projectData.length,
-                      ),
-              )),
-        ],
+      body: GetX<ProjectDioModel>(
+        init: ProjectDioModel(),
+        initState: (state) {
+          scrollController.addListener(scrollListener);
+          if (state.controller!.projectData.isEmpty) {
+            state.controller?.getData(search: search);
+          }
+        },
+        builder: (controller) => RefreshWidget(
+          onRefresh: _refresh,
+          child: controller.projectData.isEmpty
+              ? WidgetsUse().listProjectShimmer()
+              : WidgetsUse.instance.listProject(
+                  listProject: controller.projectData,
+                  controller: scrollController,
+                ),
+        ).buildAndroid(),
       ),
     );
   }
