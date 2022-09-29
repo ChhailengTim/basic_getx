@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:product_app/api_dio/model/dio_model.dart';
+import 'package:product_app/api_dio/view/screens/commision.dart';
 import 'package:product_app/api_dio/view/widgets/refresh_widget.dart';
 import 'package:product_app/api_dio/view/widgets/widget.dart';
 import 'package:product_app/api_dio/view_model/dio_view_model.dart';
@@ -32,6 +33,19 @@ class ApiwithDioScreen extends StatelessWidget {
     scrollController.addListener(scrollListener);
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CommisionScreen(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.arrow_forward),
+          ),
+        ],
         title: TextField(
           controller: textinput,
           decoration: const InputDecoration(
