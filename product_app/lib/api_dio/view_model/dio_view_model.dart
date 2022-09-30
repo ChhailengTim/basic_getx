@@ -18,6 +18,11 @@ class ProjectDioModel extends GetxController {
     super.onInit();
   }
 
+  String? search;
+  void resetData() {
+    search = null;
+  }
+
   Future getData({
     int? provinceID,
     int? projectTypeID,
