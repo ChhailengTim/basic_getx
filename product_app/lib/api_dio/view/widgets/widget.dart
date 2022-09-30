@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:product_app/api_dio/model/dio_model.dart';
+import 'package:product_app/api_dio/navigations/navigations.dart';
 import 'package:product_app/api_dio/view/widgets/image_cache.dart';
-import 'package:product_app/api_dio/view/widgets/projects/project_detail.dart';
 import 'package:product_app/api_dio/view/widgets/shimmer_loading.dart';
+import 'package:product_app/api_dio/view_model/dio_view_model.dart';
 
 class WidgetsUse {
   WidgetsUse._();
   static final instance = WidgetsUse._();
   factory WidgetsUse() => instance;
+
+  final projectDioModel = Get.put(ProjectDioModel());
 
   SingleChildScrollView listProjectShimmer() => SingleChildScrollView(
         child: Column(
@@ -38,7 +41,9 @@ class WidgetsUse {
         itemBuilder: (context, index) {
           return projectCard(
             onTap: () {
-              Get.to(() => const ProjectDetail());
+              routeToNamed(
+                  routeName: RouteNames().detailPage,
+                  arguments: listProject[index]);
             },
             projectModel: listProject[index],
           );

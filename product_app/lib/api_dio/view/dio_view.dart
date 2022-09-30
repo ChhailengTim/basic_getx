@@ -55,7 +55,6 @@ class ApiwithDioScreen extends StatelessWidget {
           onTypeEnd: (text) {
             projectDioModel.search = text == '' ? null : text;
             _refresh();
-            print(text);
           },
         ).build(),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:product_app/api_dio/navigations/get_route.dart';
 import 'package:product_app/api_dio/view/dio_view.dart';
 
 void main() {
@@ -17,12 +18,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       initialRoute: '/',
-      getPages: [
-        GetPage(
-          name: '/',
-          page: () =>  ApiwithDioScreen(),
-        ),
-      ],
+      getPages: GetRoutes().routes,
+      home: ApiwithDioScreen(),
     );
   }
 }
