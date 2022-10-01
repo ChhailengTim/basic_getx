@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:product_app/api_dio/model/dio_model.dart';
 import 'package:product_app/api_dio/view/screens/commision.dart';
+import 'package:product_app/api_dio/view/widgets/new_page.dart';
 import 'package:product_app/api_dio/view/widgets/projects/search_textfield.dart';
 import 'package:product_app/api_dio/view/widgets/refresh_widget.dart';
 import 'package:product_app/api_dio/view/widgets/widget.dart';
@@ -76,6 +77,9 @@ class ApiwithDioScreen extends StatelessWidget {
                 ),
         ).buildAndroid(),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        Get.to(() => const MyWidget());
+      }),
     );
   }
 }
