@@ -27,13 +27,15 @@ class _MyWidgetState extends State<MyWidget> {
               hintText: 'input',
             ),
           ),
-          Text(
-            '\$ ${calulate.total}',
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          calulate.hour != 0
+              ? Text(
+                  '\$ ${calulate.total}',
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+              : const Text('Input'),
           ElevatedButton(
             onPressed: () {
               setState(() {
