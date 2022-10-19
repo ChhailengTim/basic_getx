@@ -1,7 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:product_app/image_picker/view/multi_image.dart';
 
 class ImagePickerScreen extends StatefulWidget {
   const ImagePickerScreen({super.key});
@@ -11,7 +13,7 @@ class ImagePickerScreen extends StatefulWidget {
 }
 
 class _ImagePickerScreenState extends State<ImagePickerScreen> {
-  File? _image;
+  dynamic _image;
 
   // Future getImage() async {
   //   final image = await ImagePicker().pickImage(source: ImageSource.gallery);
@@ -33,6 +35,8 @@ class _ImagePickerScreenState extends State<ImagePickerScreen> {
     return null;
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,24 +44,37 @@ class _ImagePickerScreenState extends State<ImagePickerScreen> {
         title: const Text("Image Picker"),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           InkWell(
-            onTap: () {
-              _selectImage(ImageSource.gallery);
+            onTap: () async {
+              var data = (await _selectImage(ImageSource.gallery))![0];
+              setState(() {
+                _image = data;
+              });
             },
-            child: SizedBox(
+            child: Container(
               width: 200,
               height: 200,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.black,
+                  width: 1,
+                ),
+              ),
               child: _image != null
                   ? Image.file(
                       _image!,
                       fit: BoxFit.cover,
                     )
-                  : Image.network(
-                      'https://miro.medium.com/max/1400/1*IC7_pdLtDMqwoqLkTib4JQ.jpeg',
-                      fit: BoxFit.cover,
-                    ),
+                  : const Icon(Icons.add),
             ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Get.to(() => const MultiImageScreen());
+            },
+            child: const Text('Go to next page'),
           ),
         ],
       ),
